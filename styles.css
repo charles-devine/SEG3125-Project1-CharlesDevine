@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+body {
+  height: 3000px;
+  overflow-x: hidden; 
+  font-family: 'Poppins', sans-serif;
+
+}
+
+.bg-image { 
+    width: 100vw; 
+    height: 100vh; 
+    object-fit: cover; 
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    z-index: -1; 
+    filter: brightness(0.6); 
+}
+
+.navbar { 
+    transition: all 0.5s; 
+}
+
+.navbar-scrolled { 
+    background-color: #d5eef0; 
+    box-shadow: 0 3px 10px rgba(155, 240, 226, 0.15); 
+}
+
+.bg-image-container {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bg-image-text {
+    font-size: 32px;
+    color: rgb(253, 253, 253);
+    font-family: Arial, sans-serif;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.container {
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+    height: 600px;
+    background-color: transparent; /* Transparent white */
+    padding: 4rem 5rem;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: flex-start; /* Align items to the top */
+    justify-content: flex-start; /* Align content to the left */
+}
+
+.textblock {
+    width: 100%;
+    max-width: 45%;
+    font-family: 'Poppins', sans-serif;
+}
+
+.textblock .title {
+    text-align: left;
+    text-transform: uppercase;
+    color: #fff;
+    margin-bottom: 1.5rem;
+}
+
+.textblock .sub-title {
+    text-align: left;
+    font-size: 1.2rem;
+    color: #6f97db;
+    margin-bottom: 1.8rem;
+}
+
+.textblock p {
+    margin-bottom: 1.3rem;
+    color:rgb(157, 157, 216)
+}
+
+a.btn {
+  border: 1px solid #fff;
+  color: #fff;
+  padding: 1.2rem 2.2rem;
+  margin-top: 1.5rem;
+  text-decoration: none;
+  display: inline-flex; /* Use inline-flex instead of inline-block */
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally */
+  text-align: center; /* Center text horizontally */
+}
+
+
+.custom-container {
+    background-color: #C3E6ED;
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+}
+
+.custom-container-inner {
+    max-width: 750px;
+    margin: 0 auto;
+    margin-top: 40px; 
+    margin-bottom: 40px;
+}
+
+.custom-container h1,
+.custom-container h4,
+.custom-container p {
+    text-align: center;
+}
+
+.card {
+  background-color: #6f97db;
+  color: #fff;
+  text-align: left;
+  font-size: 18px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 400px;
+  padding: 20px 50px 0;
+}
+
+.image-container {
+  margin-bottom: 0px;
+}
+
+.image-container img {
+  width: 100%;
+  height: auto;
+}
+
+.card-title {
+  font-size: 24px;
+  text-align: left; /* Center horizontally within the card */
+  margin-top: 50px; 
+}
+
+.card-text {
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+.btn {
+  margin-top: 20px;
+  margin-bottom: 175px;
+  height: 75px;
+  width: 200px;
+  border: 1px solid #fff;
+  color: #fff;
+  padding: 1.2rem 2.2rem;
+  text-decoration: none;
+  display: inline-block;
+  background-color: transparent;
+  transition: background-color 0.3s ease;
+  text-align: center;
+}
+
+.btn:hover {
+  background-color: #fff;
+  color: #000000;
+}
+
+.btn:active {
+  background-color: #fff;
+  color: #000000;
+}
+
+#first-card,
+#second-card,
+#about-container {
+  margin-bottom: 0 !important;
+}
+
+.dropdown-menu {
+  background-color: transparent !important;
+  border: 1px solid white !important;
+
+}
+
+.dropdown-menu a {
+  color: white !important;
+}
+
+  
+
+
+
+  
+  
+

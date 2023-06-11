@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Ottawa Pet Service</title>
+    <style>
+                body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar-scrolled {
+            background-color: #d5eef0;
+            box-shadow: 0 3px 10px rgba(155, 240, 226, 0.15);
+        }
+
+        .navbar {
+            margin-bottom: 0 !important;
+            transition: all 0.5s;
+        }
+
+        .container-fluid.custom-container {
+            margin-top: 700px;
+            background-color: #6f97db;
+            text-align: center;
+            padding: 20px;
+            width: 100%;
+        }
+
+        .custom-container-inner {
+            margin: 0 auto;
+            text-align: center;
+            
+        }
+
+        .bg-image-container {
+            position: absolute;
+            top: 0px;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+
+        /* rabbit bg img*/
+        .bg-image-container .bg-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card {
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .card-img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+
+        .btn {
+            border: 1px solid #6f97db;
+            color: #6f97db;
+            padding: 1.2rem 2.2rem;
+            text-decoration: none;
+            display: inline-flex;
+            /* Use inline-flex instead of inline-block */
+            align-items: center;
+            /* Center vertically */
+            justify-content: center;
+            /* Center horizontally */
+            text-align: center;
+            /* Center text horizontally */
+        }
+
+        .custom-container {
+            margin-top: 50px;
+        }
+
+        #confirmationMessage {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: transparent;
+            z-index: 2;
+            color: black;
+        }
+
+        #bookingForm {
+            position: relative;
+            z-index: 1;
+        }
+
+        #confirmationMessage .card-title {
+            text-align: left;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+        }
+
+        #confirmationMessage .card-subtitle {
+            text-align: left;
+            font-size: 1.2rem;
+            margin-bottom: 1.8rem;
+        }
+    </style>
+
+</head>
+<body>
+
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top navbar-scrolled">
+        <div class="container-fluid">
+            <a class="navbar-brand bold-text" href="#">
+                <a class="navbar-brand" href="index.html">Ottawa Pet Services</a>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="services.html">Pet Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="experts.html">Experts</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="booking.html">Book now</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#about-container">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#footer">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- scroll transition-->
+    <script>
+        const nav = document.querySelector('.navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 56) {
+                nav.classList.add('navbar-scrolled');
+            } else if (window.scrollY < 57) {
+                nav.classList.remove('navbar-scrolled');
+            }
+        });
+    </script>
+
+    <!-- background image container 1 -->
+    <div class="bg-image-container">
+        <img class="bg-image" style="height: 700px;"
+            src="https://images.unsplash.com/photo-1685954998816-6b413b3ecc7a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80"
+            alt="Background Image">
+    </div>
+
+    <!-- Book a consultation -->
+    <div class="container-fluid custom-container">
+        <div class="row">
+            <div class="col">
+                <div class="custom-container-inner">
+                    <h1>Book a consultation today</h1>
+                    <h5>Fill out our booking/consultation form to get started on a personalized care plan tailored to
+                        meet their unique needs.</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- form / confirmation message -->
+
+    <div class="container" style="position: relative; z-index: 1;">
+        <div class="custom-container" style="margin-top: 50px;">
+            <form id="bookingForm">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Full Name</label>
+                            <input type="text" class="form-control" id="name" placeholder="Enter your first and last name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="contactNumber" class="form-label">Contact Number</label>
+                            <input type="tel" class="form-control" id="contactNumber" placeholder="Enter your telephone number">
+                        </div>
+                        <div class="mb-3">
+                            <label for="emailAddress" class="form-label">Contact Email Address</label>
+                            <input type="email" class="form-control" id="emailAddress" placeholder="Enter your email address">
+                        </div>
+                        <div class="mb-3">
+                            <label for="petName" class="form-label">Your Pet's Name</label>
+                            <input type="text" class="form-control" id="petName" placeholder="Enter your pet's name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="petSpecies" class="form-label">Your Pet's Species</label>
+                            <input type="text" class="form-control" id="petSpecies" placeholder="Enter your pet's species">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label for="reason" class="form-label">Reason for Visit</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="checkUp">
+                                <label class="form-check-label" for="checkUp">
+                                    Check-up
+                                </label>
+                            </div>
+    
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="surgeryConsult">
+                                <label class="form-check-label" for="surgeryConsult">
+                                    Surgery Consult
+                                </label>
+                            </div>
+    
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="grooming">
+                                <label class="form-check-label" for="grooming">
+                                    Grooming
+                                </label>
+                            </div>
+    
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="neuterSpayClinic">
+                                <label class="form-check-label" for="neuterSpayClinic">
+                                    Neuter/Spay Clinic
+                                </label>
+                            </div>
+    
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="medicationRefill">
+                                <label class="form-check-label" for="medicationRefill">
+                                    Medication Refill
+                                </label>
+                            </div>
+    
+                        </div>
+                        <div class="mb-3">
+                            <label for="preferredVet" class="form-label">Preferred Vet</label>
+                            <div class="form-floating">
+                                <select class="form-select" id="preferredVet" aria-label="Floating label select example">
+                                    <option value="1">Dr. Lydia Anderson</option>
+                                    <option value="2">Dr. Sophia Rivera</option>
+                                    <option value="3">Benjamin Collins</option>
+                                </select>
+                                <label for="preferredVet">Select an option below</label>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="preferredTime" class="form-label">Preferred Time of Appointment</label>
+                            <div class="form-floating">
+                                <select class="form-select" id="preferredTime" aria-label="Floating label select example">
+                                    <option value="1">Morning</option>
+                                    <option value="2">Afternoon</option>
+                                    <option value="3">Evening</option>
+                                </select>
+                                <label for="preferredTime">Select an option below</label>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="additionalInfo" class="form-label">Additional Info</label>
+                            <textarea class="form-control" id="additionalInfo" rows="3" placeholder="Enter your message"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <button id="submitButton" class="btn">Submit</button>
+            </form>
+        </div>
+        <div id="confirmationMessage" class="container d-none">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 offset-lg-3 mt-5">
+                        <div class="card">
+                            <div class="card-body">
+                                <h3 class="card-title text-center mb-4" styles="color: #6f97db;" >Appointment Confirmation</h3>
+                                <p class="card-text text-center">Your appointment has been successfully scheduled.</p> 
+                                <p class="card-text text-center"></p>Please arrive 15 minutes before your scheduled appointment time.</p>
+                                <p class="card-text text-center">If you have any questions, please contact us at (123) 251-2121</p>                                <div class="text-center mt-4">
+                                    <a href="index.html" class="btn">Back to Home</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>        
+        </div>
+    </div>
+    
+    <!-- confirmation msg script-->
+    <script>
+        const form = document.getElementById('bookingForm');
+        const confirmationMessage = document.getElementById('confirmationMessage');
+        const submitButton = document.getElementById('submitButton');
+    
+        submitButton.addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent form submission
+    
+            form.reset(); // Optional: Reset the form fields
+            confirmationMessage.classList.remove('d-none'); // Show the confirmation message
+        });
+    </script>
+
+    <!-- footer for contact info -->
+    <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 my-5 border-top" id="footer"
+        style="margin-left: 400px; margin-right: 400px;">
+
+        <div class="col mb-3">
+            <a href="/" class="d-flex align-items-center mb-3 link-dark text-decoration-none">
+                <svg class="bi me-2" width="40" height="32">
+                    <use xlink:href="#bootstrap"></use>
+                </svg>
+            </a>
+            <p class="text-muted">Ottawa Pet Services © 2023</p>
+        </div>
+
+        <!-- email etc -->
+        <div class="col mb-3">
+            <h5>Contact</h5>
+            <ul class="nav flex-column">
+                <li class="nav-item mb-2"><a class="nav-link p-0 text-muted">Tel: (123) 251-2121</a></li>
+                <li class="nav-item mb-2"><a class="nav-link p-0 text-muted">Mail: info@ottawapetservices.ca</a></li>
+                <li class="nav-item mb-2"><a class="nav-link p-0 text-muted">fax: +44 161 999 8888</a></li>
+            </ul>
+        </div>
+
+        <!-- location -->
+        <div class="col mb-3">
+            <h5>Location</h5>
+            <div style="max-width: 100%;">
+                <img src="Capture.PNG" alt="map" style="max-width: 100%;">
+            </div>
+        </div>
+
+        <!-- hours -->
+        <div class="col mb-3">
+            <h5>Business Hours</h5>
+            <ul class="nav flex-column">
+                <li class="nav-item mb-2"><a class="nav-link p-0 text-muted">Monday 8:00 - 18:00</a></li>
+                <li class="nav-item mb-2"><a class="nav-link p-0 text-muted">Tuesday 8:00 - 18:00</a></li>
+                <li class="nav-item mb-2"><a class="nav-link p-0 text-muted">Wednesday 8:00 - 18:00</a></li>
+                <li class="nav-item mb-2"><a class="nav-link p-0 text-muted">Thursday 8:00 - 18:00</a></li>
+                <li class="nav-item mb-2"><a class="nav-link p-0 text-muted">Friday 8:00 - 18:00</a></li>
+                <li class="nav-item mb-2"><a class="nav-link p-0 text-muted">Saturday 8:00 - 12:00</a></li>
+                <li class="nav-item mb-2"><a class="nav-link p-0 text-muted">Sunday 8:00 - 12:00</a></li>
+            </ul>
+        </div>
+
+
+        <!-- address -->
+        <div class="col mb-3">
+            <h5>Address</h5>
+            <p class="text-muted">1234 Main St, Ottawa, ON K1A 2B3, Canada</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-z9MFQyLyiDhxP0L1BaFdD6KWOv/w0yJ/sap3I6wpnkb/egd8BmIZLsv/gKnfShj1" crossorigin="anonymous"> </script>
+</body>
+</html>
