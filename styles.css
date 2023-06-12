@@ -48,14 +48,14 @@ body {
     max-width: 1000px;
     margin: auto;
     height: 600px;
-    background-color: transparent; /* Transparent white */
+    background-color: transparent;
     padding: 4rem 5rem;
     position: absolute;
     bottom: 0;
     left: 0;
     display: flex;
-    align-items: flex-start; /* Align items to the top */
-    justify-content: flex-start; /* Align content to the left */
+    align-items: flex-start;
+    justify-content: flex-start; 
 }
 
 .textblock {
@@ -89,10 +89,10 @@ a.btn {
   padding: 1.2rem 2.2rem;
   margin-top: 1.5rem;
   text-decoration: none;
-  display: inline-flex; /* Use inline-flex instead of inline-block */
-  align-items: center; /* Center vertically */
-  justify-content: center; /* Center horizontally */
-  text-align: center; /* Center text horizontally */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 
@@ -144,7 +144,7 @@ a.btn {
 
 .card-title {
   font-size: 24px;
-  text-align: left; /* Center horizontally within the card */
+  text-align: left;
   margin-top: 50px; 
 }
 
